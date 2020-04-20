@@ -1,0 +1,48 @@
+// Khac Bao An Le
+// Student grade
+// Input student grade to an array and calculate letter
+// Version 1
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+  string student_name[5] = {"Mary Brown", "George Smith", "Dale Barnes", "Sally Dolittle", "Conrad Bailer"};
+  double letter_grade[5][3];
+  for (int i = 0; i < 5;  i++)
+  {
+    cout << "Enter the three score of student " << i+1 << ": ";
+    cin >> letter_grade[i][0] >> letter_grade[i][1] >> letter_grade[i][2];
+  }
+  cout << endl;
+
+  double average;
+  char final_grade;
+  for (int j = 0; j < 5; j++)
+  {
+    average = (letter_grade[j][0] + letter_grade[j][1] + letter_grade[j][2]) / 3;
+    if (average >= 90)
+    {
+      final_grade = 'A';
+    }
+    else if (average >= 80)
+    {
+      final_grade = 'B';
+    }
+    else if (average >= 70)
+    {
+      final_grade = 'C';
+    }
+    else if (average >= 60)
+    {
+      final_grade = 'D';
+    }
+    else
+    {
+      final_grade = 'F';
+    }
+    cout << student_name[j] << " has an average of " << average << " which give the letter grade of " << final_grade << endl;
+  }
+}
